@@ -8,11 +8,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Wellcome"
-      redirect_to root_path
-
+      redirect_to "/dashboards/dashboard_1"
     else
-      redirect_to :back
-      flash[:error] = "Error"
+      render "new", :layout => "empty"
     end
   end
 

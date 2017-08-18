@@ -1,7 +1,7 @@
 Myapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
-  root to: 'dashboards#dashboard_1'
+  root to: 'landing#index'
 
   # All routes
   get "dashboards/dashboard_1"
@@ -72,6 +72,7 @@ Myapp::Application.routes.draw do
   get "pages/login_2"
   get "pages/forgot_password"
   get 'pages/register', to: 'users#new'
+
   post 'users', to: 'users#create'
   get "pages/not_found_error"
   get "pages/internal_server_error"
