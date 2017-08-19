@@ -9,19 +9,19 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">David Williams</strong>
+                                <strong class="font-bold"><%= @user.username%> </strong>
                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                        <li><a href="">Profile</a>
+                        <li><%= link_to "Profile", users_id_path(session[:user_id]) %>
                         </li>
                         <li><a href="">Contacts</a>
                         </li>
                         <li><a href="">Mailbox</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="">Logout</a>
+                        <li><%= link_to "Logout", logout_path, method: :delete %>
                         </li>
                     </ul>
                 </div>
@@ -93,7 +93,7 @@
                 <ul class="nav nav-second-level collapse <%= is_active_controller('appviews', 'in') %>">
                     <li class="<%= is_active_action('contacts') %>"><%= link_to "Contacts", appviews_contacts_path %> </li>
                     <li class="<%= is_active_action('profile') %>"><%= link_to "Profile", appviews_profile_path %> </li>
-                    <li class="<%= is_active_action('profile_two') %>"><%= link_to "Profile v.2", appviews_profile_two_path %> </li>
+                    <li class="<%= is_active_action('profile_two') %>"><%= link_to "Profile v.2", users_id_path(session[:user_id]) %> </li>
                     <li class="<%= is_active_action('contacts_two') %>"><%= link_to "Contacts v.2", appviews_contacts_two_path %> </li>
                     <li class="<%= is_active_action('projects') %>"><%= link_to "Projects", appviews_projects_path %> </li>
                     <li class="<%= is_active_action('project_detail') %>"><%= link_to "Project detail", appviews_project_detail_path %> </li>

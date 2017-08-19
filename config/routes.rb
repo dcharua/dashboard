@@ -45,7 +45,6 @@ Myapp::Application.routes.draw do
 
   get "appviews/contacts"
   get "appviews/profile"
-  get "appviews/profile_two"
   get "appviews/contacts_two"
   get "appviews/projects"
   get "appviews/project_detail"
@@ -73,6 +72,11 @@ Myapp::Application.routes.draw do
   get "pages/forgot_password"
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'
+  get "users/:id", to: 'users#show', as: :users_id
+  get  "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  get 'logout' => :destroy, to: "sessions#destroy"
+  
   get "pages/not_found_error"
   get "pages/internal_server_error"
   get "pages/empty_page"
