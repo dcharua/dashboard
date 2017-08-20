@@ -6,9 +6,6 @@ module ApplicationHelper
            nil
         end
     end
-    def get_user
-      user = User.find(session[:user_id])
-    end
 
     def is_active_action(action_name)
         params[:action] == action_name ? "active" : nil

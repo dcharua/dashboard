@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+
+
   def new
     @user = User.new
     render :layout => "empty"
@@ -8,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Wellcome"
+      session[:user_id] = @user.id
       redirect_to "/dashboards/dashboard_1"
     else
       render "new", :layout => "empty"

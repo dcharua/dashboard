@@ -1,3 +1,4 @@
+<% if !logged_in?%>
 <div class="navbar-wrapper">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
@@ -604,6 +605,9 @@
     </div>
 </div>
 </section>
+
+<%else controller.redirect_to dashboards_dashboard_1_path%>
+<%end%>
 <% content_for :javascript do %>
 
 <script type="text/javascript">
